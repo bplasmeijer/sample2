@@ -17,6 +17,8 @@ runs:
           echo "No changes detected"
           exit 0
         else
+          docker run --rm -v $(pwd):/src -w /src mcr.microsoft.com/azterraform make pre-commit
+          exit 0
           echo "AVMfix changes detected, please run:"
           echo "> docker run --rm -v $(pwd):/src -w /src mcr.microsoft.com/azterraform make pre-commit"
           echo "... or if you have the avm helper script installed:"
