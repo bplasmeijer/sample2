@@ -1,3 +1,4 @@
+---
 name: linting
 
 on:
@@ -23,7 +24,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 #v4.2.2
 
       - name: check docs
-        uses: ./.github/actions/docs-check@main
+        uses: Azure/terraform-azurerm-avm-template/.github/actions/docs-check@main
 
   terraform:
     if: github.event.repository.name != 'terraform-azurerm-avm-template'
@@ -34,7 +35,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 #v4.2.2
 
       - name: lint terraform
-        uses: ./.github/actions/linting@main
+        uses: Azure/terraform-azurerm-avm-template/.github/actions/linting@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -47,7 +48,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 #v4.2.2
 
       - name: avmfix
-        uses: ./..github/actions/avmfix@main
+        uses: Azure/terraform-azurerm-avm-template/.github/actions/avmfix@main
 
   lintcomplete:
     needs: [docs, terraform, avmfix]
