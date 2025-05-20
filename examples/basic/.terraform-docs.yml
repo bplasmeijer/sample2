@@ -1,0 +1,29 @@
+formatter: markdown
+header-from: "_header.md"
+footer-from: "_footer.md"
+content: |-
+  {{ .Header }}
+
+  ## Example Usage
+
+  ```hcl
+  {{ include "main.tf" }}
+  ```
+
+  {{ .Requirements }}
+
+  {{ .Providers }}
+
+  {{ .Modules }}
+
+  {{ .Resources }}
+
+  {{ .Inputs }}
+
+  {{ .Outputs }}
+
+  {{ .Footer }}
+
+output:
+  file: "README.md"
+  mode: replace
