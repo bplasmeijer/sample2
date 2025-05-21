@@ -1,5 +1,6 @@
 # filepath: /workspaces/bap-hubspoke-deployements/main.tf
 # test
+# test2
 
 resource "azurerm_resource_group" "this" {
   location = var.location
